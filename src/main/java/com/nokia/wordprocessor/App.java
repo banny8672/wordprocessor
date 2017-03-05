@@ -2,13 +2,17 @@ package com.nokia.wordprocessor;
 
 import java.io.File;
 
+import javax.print.attribute.standard.JobMessageFromOperator;
+import javax.swing.JOptionPane;
+
 public class App 
 {
     public static void main( String[] args ) throws Exception
     {
 		// TODO Auto-generated method stub
 		
-		final String BASE_LOACATION = "D:\\DocProcess\\";
+		//final String BASE_LOACATION = "D:\\DocProcess\\";
+    	final String BASE_LOACATION = JOptionPane.showInputDialog(null, "Enter the path of Input", "HLR",JOptionPane.QUESTION_MESSAGE);
 		final String OUTPUT_LOACATION = "outp";
 		final String FILE_FORMAT = ".docx";
 		final String INPUT_FILE = "ONENDS-WX-HSSEPS_irn";
@@ -28,6 +32,8 @@ public class App
 		XMLGenerator.processXMLfile(XML_INPUT_FILE);
 		
 		FolderZiper.zipDirectory(new File(OUTPUT_UNZIP_FOLDER), new File(BASE_LOACATION), OUTPUT_DOC_FILE_NAME);
-	
+		
+		//JOptionPane.showMessageDialog(null, "SUccessFull", ,JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, "OutPut File path : " +BASE_LOACATION + " "  + "\nSuccessfull");
 	}
 }
