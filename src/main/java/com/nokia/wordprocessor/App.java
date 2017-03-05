@@ -14,12 +14,12 @@ public class App
 		//final String BASE_LOACATION = "D:\\DocProcess\\";
     	final String BASE_LOACATION = JOptionPane.showInputDialog(null, "Enter the path of Input", "HLR",JOptionPane.QUESTION_MESSAGE);
 		final String OUTPUT_LOACATION = "outp";
-		final String FILE_FORMAT = ".docx";
-		final String INPUT_FILE = "ONENDS-WX-HSSEPS_irn";
+		final String INPUT_FILE = JOptionPane.showInputDialog(null, "Enter the Name of File", "HLR",JOptionPane.QUESTION_MESSAGE);
+		//final String INPUT_FILE = "ONENDS-WX-HSSEPS_irn";
 		//final String INPUT_FILE = "ONENDS-WX-3GPPHSS_irn";
 		//final String INPUT_FILE = "OneNDS_WX_HLR16_irn";
 		
-		final String INPUT_ZIP_FILE = BASE_LOACATION + File.separator + INPUT_FILE + FILE_FORMAT;
+		final String INPUT_ZIP_FILE = BASE_LOACATION + File.separator + INPUT_FILE;
 		final String OUTPUT_UNZIP_FOLDER = BASE_LOACATION + File.separator + OUTPUT_LOACATION;
 		
 		final String XML_INPUT_FILE = OUTPUT_UNZIP_FOLDER+File.separator+"word"+File.separator+"document.xml";
